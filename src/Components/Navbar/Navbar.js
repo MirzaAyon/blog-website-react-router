@@ -10,9 +10,10 @@ const Navbar = () => {
         <img src={Logo} alt='' />
       </div>
       <div className='link-container'>
-        <NavLink className="link" to='/'>Home</NavLink>
-        <NavLink className="link" to='/login'>Login</NavLink>
-        <NavLink className="link" to='/videos'>Videos</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'link'} to='/'>Home</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'link'} to='/login'>Login</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'link'} to='/videos'>Videos</NavLink>
+        {/* active link er bodole navlink use korlam ja active link er motoe kaj kore  */}
       </div>
     </nav>
   );
