@@ -12,6 +12,7 @@ export const BlogContext = createContext();
 
 function App() {
   const [blogs, setBlogs] = useState([]);
+  console.log(blogs); //tar mane blogs ta app.js theke ashtese
   return (
     <BlogContext.Provider value={[blogs, setBlogs]}>
       <Navbar></Navbar>
