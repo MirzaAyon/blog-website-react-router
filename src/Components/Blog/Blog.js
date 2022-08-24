@@ -29,6 +29,8 @@ const Blog = ({ blog }) => {
             {/* evabe anonymous func na diye drect call kore dile page ta load hobar sathe sathe func ta render hye jabe  */}
             {/* kono link,custom link, navlink use na kore ekta btn er click onujai click ta porar pore click onujai jei path name ta ache shekhane niye jabe sheta korar jnno react router dom er useNavigate import krbo erpr use navigate take call korbo shei useNavigate ta ekta function return korbe shei func take ekta var er modhe rakhbo , erpr ekta btn er on click e ekta anonymous func pathae dibo erpr navigate take call kore dbo erpr call kora shomoy ekta pm pathate hbe ja decide korbe amra actually koi jabo  */}
             {/* id disi mane changeable mane dynamic bhabe change hbe tai ulta palta ekta pm diye run korleo error dibe na  */}
+            {/* id ta blog details er modhe pete chai ekhane ashbe useParams er khela  */}
+            {/* amra pm ekta jaygae set kortesi jemon app.js e pm set :id kortesi but pm ta kono jaegae pete hbe tokhn amra use Params ta set krbo */}
           </span>
         </p>
       </div>
