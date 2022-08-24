@@ -18,12 +18,12 @@ const BlogDetails = () => {
   const navigate = useNavigate();
   const [blog, setBlog] = useState({});
   console.log(blog); //readmore e click korle ekta block shw hbe 
-  useEffect(() => {
-    fetch(`https://retro-tech-talks.herokuapp.com/getBlog/${id}`)
-      .then(res => res.json())
-      .then(data => setBlog(data))
-    //ami janina data ta ki hishebe dichche tai console log korbo and shei onujai useState e empty obj or array dibo
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`https://retro-tech-talks.herokuapp.com/getBlog/${id}`)
+  //     .then(res => res.json())
+  //     .then(data => setBlog(data))
+  //   //ami janina data ta ki hishebe dichche tai console log korbo and shei onujai useState e empty obj or array dibo
+  // }, [id]);
   //dynamic erkhetre dependancy te id dibo ba jekono dependency dbo
   return (
     <>

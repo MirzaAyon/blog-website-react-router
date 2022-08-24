@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home"
 import Videos from './Components/Videos/Videos'
@@ -11,8 +11,9 @@ import BlogDetails from "./Components/BlogDetails/BlogDetails";
 export const BlogContext = createContext();
 
 function App() {
+  const [blogs, setBlogs] = useState([]);
   return (
-    <>
+    <BlogContext.Provider value={[blogs, setBlogs]}>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -21,7 +22,8 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetails></BlogDetails>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-    </>
+    </BlogContext.Provider>
+    //empty <> </> er bodole BologContext er modhe shob gulake nilam
   );
 }
 
