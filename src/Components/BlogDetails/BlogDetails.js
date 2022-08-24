@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import "./BlogDetails.css";
 import { BsChevronLeft } from "react-icons/bs";
@@ -15,23 +15,26 @@ const BlogDetails = () => {
 
   const { id } = useParams();
   // console.log(id); //id pabe inspact e 
+  const navigate = useNavigate();
   return (
     <>
       <div className='header-gradient' />
       <h1>THIS is Blog Details {id}</h1>
-      {/* <div>
-        <button className='back-button'>
+      <div>
+        {/* <button className='back-button' onClick={() => navigate('/')} > */}
+        <button className='back-button' onClick={() => navigate(-1)} >
+          {/* evabe -1 dileo hbe abr '/' dileo hbe tahole ager page e niye jabe othoba home e niye jabe  */}
           <BsChevronLeft />
           <p>Back</p>
         </button>
-        <div className='blog-details'>
+        {/* <div className='blog-details'>
           <div className='blog-image'>
             <img src={blog?.imageURL} alt='' />
           </div>
           <h1>{blog?.title}</h1>
           <p>{blog?.blog}</p>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
     </>
   );
 };
