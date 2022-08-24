@@ -7,7 +7,7 @@ const BlogDetails = () => {
   return (
     <>
       <div className='header-gradient' />
-
+      <h1>THIS is Blog Details</h1>
       {/* <div>
         <button className='back-button'>
           <BsChevronLeft />
