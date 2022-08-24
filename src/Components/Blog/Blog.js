@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Blog = ({ blog }) => {
   const navigate = useNavigate();
+  //useNavigate ekta func return kore 
   const { imageURL, title, blog: blogBody, admin, _id } = blog;
   return (
     <div className='blog-container'>
@@ -23,6 +24,7 @@ const Blog = ({ blog }) => {
           {blogBody.length < 400 ? blogBody.length : blogBody.slice(0, 400)}
           <span className='read-more' onClick={() => navigate(`/blog/${_id}`)}>
             ...Read More
+            {/* evabe anonymous func na diye drect call kore dile page ta load hobar sathe sathe func ta render hye jabe  */}
           </span>
         </p>
       </div>
