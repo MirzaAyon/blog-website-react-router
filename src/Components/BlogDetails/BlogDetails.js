@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import "./BlogDetails.css";
@@ -16,10 +16,19 @@ const BlogDetails = () => {
   const { id } = useParams();
   // console.log(id); //id pabe inspact e 
   const navigate = useNavigate();
+  const [blog, setBlog] = useState({});
+  console.log(blog); //readmore e click korle ekta block shw hbe 
+  useEffect(() => {
+    fetch(`https://retro-tech-talks.herokuapp.com/getBlog/${id}`)
+      .then(res => res.json())
+      .then(data => setBlog(data))
+    //ami janina data ta ki hishebe dichche tai console log korbo and shei onujai useState e empty obj or array dibo
+  }, [id]);
+  //dynamic erkhetre dependancy te id dibo ba jekono dependency dbo
   return (
     <>
       <div className='header-gradient' />
-      <h1>THIS is Blog Details {id}</h1>
+      {/* <h1>THIS is Blog Details {id}</h1> */}
       <div>
         {/* <button className='back-button' onClick={() => navigate('/')} > */}
         <button className='back-button' onClick={() => navigate(-1)} >
@@ -27,13 +36,13 @@ const BlogDetails = () => {
           <BsChevronLeft />
           <p>Back</p>
         </button>
-        {/* <div className='blog-details'>
+        <div className='blog-details'>
           <div className='blog-image'>
             <img src={blog?.imageURL} alt='' />
           </div>
           <h1>{blog?.title}</h1>
           <p>{blog?.blog}</p>
-        </div> */}
+        </div>
       </div>
     </>
   );
