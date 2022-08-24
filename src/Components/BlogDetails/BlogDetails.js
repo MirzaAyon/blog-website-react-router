@@ -26,8 +26,11 @@ const BlogDetails = () => {
   //   //ami janina data ta ki hishebe dichche tai console log korbo and shei onujai useState e empty obj or array dibo
   // }, [id]);
   //dynamic erkhetre dependancy te id dibo ba jekono dependency dbo
-  const [blogs, setBlogs] = useContext(BlogContext);
+  const [blogs] = useContext(BlogContext);
   console.log(blogs);
+
+  const blog = blogs.find(blog => blog._id === id)
+  console.log(blog);
   return (
     <>
       <div className='header-gradient' />
@@ -39,13 +42,13 @@ const BlogDetails = () => {
           <BsChevronLeft />
           <p>Back</p>
         </button>
-        {/* <div className='blog-details'>
+        <div className='blog-details'>
           <div className='blog-image'>
             <img src={blog?.imageURL} alt='' />
           </div>
           <h1>{blog?.title}</h1>
           <p>{blog?.blog}</p>
-        </div> */}
+        </div>
       </div>
     </>
   );
